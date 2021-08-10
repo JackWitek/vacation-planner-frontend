@@ -1,6 +1,6 @@
 # Vacation Planner - Frontend
 
-> A Vue.js front-end app for a Ruby on Rails API backend app.
+A Vue.js front-end app for a Ruby on Rails API backend app.
 
 ## Build Setup
 
