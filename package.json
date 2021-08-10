@@ -1,5 +1,5 @@
 {
-  "name": "recordstore-front",
+  "name": "vacayplanner-frontend",
   "version": "1.0.0",
   "description": "A Vue.js front-end app for a Ruby on Rails API backend app.",
   "author": "Andy Leverenz <andy@web-crunch.com>",

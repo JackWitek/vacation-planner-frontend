@@ -1,6 +1,10 @@
 <template>
   <div class="justify-center">
-    <h1 class="text-purple font-normal leading-normal justify-center mt-1 mb-2 ">{{this.vacation.name}}</h1>
+    <h1
+      class="text-purple font-normal leading-normal justify-center mt-1 mb-2 "
+    >
+      {{ this.vacation.name }}
+    </h1>
 
     <ul class="list-reset space-x-4  ">
       <li class="w-64 inline-block " v-for="day in days" :key="day.id">
@@ -9,7 +13,7 @@
             <div
               class="mb-6 ml-2 p-4 bg-white rounded border border-blue-light mt-4"
             >
-              <h3 class="pb-1" >{{ getNiceDate(day.date) }}</h3>
+              <h3 class="pb-1">{{ getNiceDate(day.date) }}</h3>
 
               <div class="mb-6">
                 <label class="label">Location</label>
@@ -25,8 +29,6 @@
                   v-model="day.activities"
                 ></textarea>
               </div>
-
-      
             </div>
           </form>
         </div>
@@ -70,12 +72,11 @@ export default {
       return dateFormat(date, "dddd, mmm dS");
     },
     updateVacation() {
-       
       this.$http.secured
         .patch(`/api/v1/vacations/${this.vacation.id}`, {
           vacation: { data: JSON.stringify(this.days) }
         })
-        .catch(error => this.setError(error, "Cannot update record"));
+        .catch(error => this.setError(error, "Cannot update vacation"));
     }
   }
 };
